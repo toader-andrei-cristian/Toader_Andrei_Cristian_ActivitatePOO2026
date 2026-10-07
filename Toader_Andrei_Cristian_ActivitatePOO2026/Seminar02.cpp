@@ -39,9 +39,27 @@ void modificareLungime(Ghiozdan* g, float lungimeNoua)
 	(*g).lungime = lungimeNoua;
 }
 
+int calculeazaNrBuzunareTotal(Ghiozdan* ghiozdane, int nrGhiozdane) {
+	int suma = 0;
+	for (int i = 0; i < nrGhiozdane; i++)
+		suma += ghiozdane[i].nrBuzunare;
+	return suma;
+}
+
 void main() {
-	Ghiozdan g = citireGhiozdan();
-	afisareGhiozdan(g);
-	modificareLungime(&g, 12);
-	afisareGhiozdan(g);
+	//Ghiozdan g = citireGhiozdan();
+	//afisareGhiozdan(g);
+	//modificareLungime(&g, 12);
+	//afisareGhiozdan(g);
+
+	int nrGhiozdane = 3;
+	Ghiozdan* ghiozdane;
+	ghiozdane = new Ghiozdan[3];
+	for (int i = 0; i < nrGhiozdane; i++) {
+		ghiozdane[i] = citireGhiozdan();
+	}
+	for (int i = 0; i < nrGhiozdane; i++) {
+		afisareGhiozdan(ghiozdane[i]);
+	}
+	cout << "Nr. total de buzunare: " << calculeazaNrBuzunareTotal(ghiozdane, nrGhiozdane);
 }
