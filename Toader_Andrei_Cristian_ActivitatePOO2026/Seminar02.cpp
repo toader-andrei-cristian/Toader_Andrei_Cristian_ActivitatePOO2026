@@ -5,7 +5,7 @@ struct Ghiozdan {
 	float lungime;
 	int nrBuzunare;
 	bool laptop;
-	char *producator;
+	char* producator;
 };
 
 Ghiozdan citireGhiozdan()
@@ -28,19 +28,20 @@ Ghiozdan citireGhiozdan()
 
 void afisareGhiozdan(Ghiozdan g)
 {
-	cout << "lungime:" << g.lungime<<endl;
+	cout << "lungime:" << g.lungime << endl;
 	cout << "buzunare:" << g.nrBuzunare << endl;
 	cout << "laptop:" << g.laptop << endl;
 	cout << "nume producator:" << g.producator << endl;
 }
 
-void modificareLungime(Ghiozdan g, float lungimeNoua)
+void modificareLungime(Ghiozdan* g, float lungimeNoua)
 {
-	g.lungime = lungimeNoua;
+	(*g).lungime = lungimeNoua;
 }
 
 void main() {
 	Ghiozdan g = citireGhiozdan();
 	afisareGhiozdan(g);
-	modificareLungime(g, 12);
+	modificareLungime(&g, 12);
+	afisareGhiozdan(g);
 }
