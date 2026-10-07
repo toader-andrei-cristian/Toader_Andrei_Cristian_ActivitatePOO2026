@@ -26,6 +26,14 @@ Ghiozdan citireGhiozdan()
 
 }
 
+void afisareGhiozdan(Ghiozdan g)
+{
+	cout << "lungime:" << g.lungime<<endl;
+	cout << "buzunare:" << g.nrBuzunare << endl;
+	cout << "laptop:" << g.laptop << endl;
+	cout << "nume producator:" << g.producator << endl;
+}
+
 void main() {
-	
+
 }
