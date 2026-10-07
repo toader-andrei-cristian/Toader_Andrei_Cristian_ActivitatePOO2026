@@ -34,7 +34,13 @@ void afisareGhiozdan(Ghiozdan g)
 	cout << "nume producator:" << g.producator << endl;
 }
 
+void modificareLungime(Ghiozdan g, float lungimeNoua)
+{
+	g.lungime = lungimeNoua;
+}
+
 void main() {
 	Ghiozdan g = citireGhiozdan();
 	afisareGhiozdan(g);
+	modificareLungime(g, 12);
 }
