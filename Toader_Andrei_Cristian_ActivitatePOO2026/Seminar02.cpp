@@ -35,5 +35,6 @@ void afisareGhiozdan(Ghiozdan g)
 }
 
 void main() {
-
+	Ghiozdan g = citireGhiozdan();
+	afisareGhiozdan(g);
 }
