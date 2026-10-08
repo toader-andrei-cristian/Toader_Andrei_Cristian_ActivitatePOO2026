@@ -46,6 +46,16 @@ int calculeazaNrBuzunareTotal(Ghiozdan* ghiozdane, int nrGhiozdane) {
 	return suma;
 }
 
+int calculeazaNrBuzunareLaptop(Ghiozdan* ghiozdane, int nrGhiozdane) {
+	int suma = 0;
+	for (int i = 0; i < nrGhiozdane; i++) {
+		if (ghiozdane[i].laptop == 1) {
+			suma += ghiozdane[i].nrBuzunare;
+		}
+	}
+	return suma;
+}
+
 void main() {
 	//Ghiozdan g = citireGhiozdan();
 	//afisareGhiozdan(g);
@@ -61,5 +71,6 @@ void main() {
 	for (int i = 0; i < nrGhiozdane; i++) {
 		afisareGhiozdan(ghiozdane[i]);
 	}
-	cout << "Nr. total de buzunare: " << calculeazaNrBuzunareTotal(ghiozdane, nrGhiozdane);
+	cout << "Nr. total de buzunare: " << calculeazaNrBuzunareTotal(ghiozdane, nrGhiozdane) << endl;
+	cout << "Nr. total de buzunare (pt. ghiozdane de laptop): " << calculeazaNrBuzunareLaptop(ghiozdane, nrGhiozdane) << endl;
 }
