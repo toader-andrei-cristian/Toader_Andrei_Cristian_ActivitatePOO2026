@@ -70,6 +70,12 @@ public:
 		return memorie - calculeazaMemorieOcupata();
 	}
 
+	void modificaProducator(const char* producatorNou) {
+		delete[]this->producator;
+		producator = new char[strlen(producatorNou) + 1];
+		strcpy_s(producator, strlen(producatorNou) + 1, producatorNou);
+	}
+
 };
 
 void main() {
@@ -82,5 +88,10 @@ void main() {
 	cout << "Spatiu liber: " << t1.calculeazaMemorieLibera() << endl;
 
 	Telefon* telefoane = new Telefon[4];
+	telefoane[1].modificaProducator("Samsung");
+	telefoane[0].modificaProducator("Xiaomi");
+	telefoane[2].modificaProducator("Honour");
 
+	for (int i = 0; i < 4; i++)
+		telefoane[i].afisare();
 }
