@@ -85,6 +85,13 @@ float calcularePretTotal(Telefon* v, int nrTelefoane) {
 	return suma;
 }
 
+float calculeazaMemorieDisponibila(Telefon* g, int nrTelefoane) {
+	float suma = 0;
+	for (int i = 0; i < nrTelefoane; i++)
+		suma += g[i].calculeazaMemorieLibera();
+	return suma;
+}
+
 void main() {
 	Telefon t;
 	t.afisare();
@@ -103,4 +110,5 @@ void main() {
 		telefoane[i].afisare();
 
 	cout << "Pret total telefoane: " << calcularePretTotal(telefoane, 4) << endl;
+	cout << "Memorie totala disponibila telefoane: " << calculeazaMemorieDisponibila(telefoane, 4) << endl;
 }
