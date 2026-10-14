@@ -58,13 +58,29 @@ public:
 			cout << this->memorieAplicatii[i] << "; ";
 		cout << endl;
 	}
+
+	float calculeazaMemorieOcupata() {
+		float sumaMemorie=0;
+		for (int i = 0; i < this->nrAplicatii; i++)
+			sumaMemorie += memorieAplicatii[i];
+		return sumaMemorie;
+	}
+
+	float calculeazaMemorieLibera() {
+		return memorie - calculeazaMemorieOcupata();
+	}
+
 };
 
 void main() {
 	Telefon t;
 	t.afisare();
+	cout<<"Spatiu liber: "<<t.calculeazaMemorieLibera()<<endl;
 
 	Telefon t1(5.6,256);
 	t1.afisare();
+	cout << "Spatiu liber: " << t1.calculeazaMemorieLibera() << endl;
+
+	Telefon* telefoane = new Telefon[4];
 
 }
