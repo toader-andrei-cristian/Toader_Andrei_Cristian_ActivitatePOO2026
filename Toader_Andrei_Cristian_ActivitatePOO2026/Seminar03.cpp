@@ -78,6 +78,13 @@ public:
 
 };
 
+float calcularePretTotal(Telefon* v, int nrTelefoane) {
+	float suma = 0;
+	for (int i = 0; i < nrTelefoane; i++)
+		suma += v[i].pret;
+	return suma;
+}
+
 void main() {
 	Telefon t;
 	t.afisare();
@@ -94,4 +101,6 @@ void main() {
 
 	for (int i = 0; i < 4; i++)
 		telefoane[i].afisare();
+
+	cout << "Pret total telefoane: " << calcularePretTotal(telefoane, 4) << endl;
 }
