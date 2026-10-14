@@ -27,8 +27,23 @@ public:
 		this->memorieAplicatii[3] = 1.6;
 		this->memorieAplicatii[4] = 2.4;
 	}
+
+	void afisare() {
+		cout << "Rezolutie: " << this->rezolutie << "\n";
+		cout << "Memorie: " << this->memorie << "\n";
+		cout << "Model: " << this->model << "\n";
+		cout << "Producator: " << this->producator << "\n";
+		cout << "Pret: " << this->pret << "\n";
+		cout << "Numar aplicatii: " << this->nrAplicatii << "\n";
+		cout << "Memorie ocupata aplicatii: ";
+		for (int i = 0; i < this->nrAplicatii; i++)
+			cout << this->memorieAplicatii[i] << "; ";
+		cout << endl;
+	}
 };
 
 void main() {
+	Telefon t;
+	t.afisare();
 
 }
