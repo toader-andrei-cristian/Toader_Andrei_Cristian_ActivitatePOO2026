@@ -29,5 +29,9 @@ public:
 			this->istoricTranzactii[i] = istoricTranzactii[i];
 		}
 	}
+	~contBancar() 
+	{
+		delete[] istoricTranzactii;
+	}
 };
 int contBancar::numarConturi = 0;
