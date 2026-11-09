@@ -29,6 +29,13 @@ public:
 			this->istoricTranzactii[i] = istoricTranzactii[i];
 		}
 	}
+	string getTitularCont() {
+		return this->titularCont;
+	}
+	void setTitularCont(string titularCont)
+	{
+		this->titularCont = titularCont;
+	}
 	~contBancar() 
 	{
 		delete[] istoricTranzactii;
