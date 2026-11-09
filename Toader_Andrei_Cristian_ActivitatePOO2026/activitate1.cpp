@@ -19,6 +19,15 @@ public:
 		this->istoricTranzactii[2] = 23.4;
 		this->istoricTranzactii[3] = 125.2;
 	}
-	
+	contBancar(string titularCont, double* istoricTranzactii, int numarTranzactii) : idCont(numarConturi++)
+	{
+		this->titularCont = titularCont;
+		this->numarTranzactii = numarTranzactii;
+		this->istoricTranzactii = new double[this->numarTranzactii];
+		for (int i = 0; i < this->numarTranzactii; i++)
+		{
+			this->istoricTranzactii[i] = istoricTranzactii[i];
+		}
+	}
 };
 int contBancar::numarConturi = 0;
