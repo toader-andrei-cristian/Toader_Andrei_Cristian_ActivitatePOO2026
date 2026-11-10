@@ -68,5 +68,14 @@ public:
 		}
 		return *this;
 	}
+	contBancar(const contBancar& c) : idCont(numarConturi++) {
+		this->titularCont = c.titularCont;
+		this->numarTranzactii = c.numarTranzactii;
+		this->istoricTranzactii = new double[this->numarTranzactii];
+		for (int i = 0; i < this->numarTranzactii; i++)
+		{
+			this->istoricTranzactii[i] = c.istoricTranzactii[i];
+		}
+	}
 };
 	int contBancar::numarConturi = 0;
