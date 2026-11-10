@@ -77,5 +77,21 @@ public:
 			this->istoricTranzactii[i] = c.istoricTranzactii[i];
 		}
 	}
+	friend ostream& operator<<(ostream& out, const contBancar& c)
+	{
+		out << "ID cont: " << c.idCont << endl;
+		out << "Titular cont: " << c.titularCont << endl;
+		out << "Numar tranzactii: " << c.numarTranzactii << endl;
+		out << "Istoric Tranzactii: ";
+		for (int i = 0; i < c.numarTranzactii; i++)
+			out << c.istoricTranzactii[i] << ", ";
+		out << endl;
+		return out;
+	}
 };
 	int contBancar::numarConturi = 0;
+int main()
+{
+		contBancar c1;
+		cout << c1;
+}
