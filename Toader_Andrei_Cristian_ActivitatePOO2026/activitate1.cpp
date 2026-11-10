@@ -54,5 +54,19 @@ public:
 			this->istoricTranzactii[i] = istoricTranzactiiNou[i];
 		}
 	}
+	contBancar& operator=(const contBancar& c) {
+		if (this != &c) {
+			this->titularCont = c.titularCont;
+			this->numarTranzactii = c.numarTranzactii;
+			if (this->istoricTranzactii != NULL)
+				delete[] this->istoricTranzactii;
+			this->istoricTranzactii = new double[this->numarTranzactii];
+			for (int i = 0; i < this->numarTranzactii; i++)
+			{
+				this->istoricTranzactii[i] = c.istoricTranzactii[i];
+			}
+		}
+		return *this;
+	}
 };
 	int contBancar::numarConturi = 0;
