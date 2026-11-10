@@ -36,7 +36,7 @@ public:
 	{
 		this->titularCont = titularCont;
 	}
-	~contBancar() 
+	~contBancar()
 	{
 		delete[] istoricTranzactii;
 	}
@@ -46,5 +46,13 @@ public:
 	double* getIstoricTranzactii() {
 		return this->istoricTranzactii;
 	}
+	void setIstoricTranzactii(const double* istoricTranzactiiNou, int dimensiuneNoua) {
+		delete[] this->istoricTranzactii;
+		this->numarTranzactii = dimensiuneNoua;
+		this->istoricTranzactii = new double[this->numarTranzactii];
+		for (int i = 0; i < this->numarTranzactii; i++) {
+			this->istoricTranzactii[i] = istoricTranzactiiNou[i];
+		}
+	}
 };
-int contBancar::numarConturi = 0;
+	int contBancar::numarConturi = 0;
