@@ -43,6 +43,8 @@ public:
 	int getNumarTranzactii() {
 		return this->numarTranzactii;
 	}
-
+	double* getIstoricTranzactii() {
+		return this->istoricTranzactii;
+	}
 };
 int contBancar::numarConturi = 0;
