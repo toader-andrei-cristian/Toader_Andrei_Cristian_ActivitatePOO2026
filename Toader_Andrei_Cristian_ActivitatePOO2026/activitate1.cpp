@@ -40,5 +40,9 @@ public:
 	{
 		delete[] istoricTranzactii;
 	}
+	int getNumarTranzactii() {
+		return this->numarTranzactii;
+	}
+
 };
 int contBancar::numarConturi = 0;
