@@ -88,6 +88,12 @@ public:
 		out << endl;
 		return out;
 	}
+	contBancar operator+(double bonus) const {
+		contBancar rezultat = *this;
+		for(int i=0;i<rezultat.numarTranzactii;i++)
+		rezultat.istoricTranzactii[i] = rezultat.istoricTranzactii[i] + bonus;
+		return rezultat;
+	}
 };
 	int contBancar::numarConturi = 0;
 int main()
